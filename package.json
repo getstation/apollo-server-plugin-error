@@ -1,6 +1,6 @@
 {
   "name": "apollo-server-plugin-error",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "apollo-server plugin that handle errors",
   "main": "dist/plugin.js",
   "types": "dist/plugin.d.ts",
