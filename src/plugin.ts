@@ -1,13 +1,10 @@
 import { ApolloServerPlugin, GraphQLRequestListener } from 'apollo-server-plugin-base';
-import { GraphQLRequestContext, WithRequired } from 'apollo-server-types';
+import { GraphQLRequestContextDidEncounterErrors } from 'apollo-server-types';
 import { GraphQLError } from 'graphql';
 
 export class ApolloServerPluginError<T> implements ApolloServerPlugin<T> {
   constructor(
-    protected errorHandler: (e: GraphQLError, requestContext: WithRequired<
-      GraphQLRequestContext<T>,
-      'metrics' | 'source' | 'errors'
-      >) => any,
+    protected errorHandler: (e: GraphQLError, requestContext: GraphQLRequestContextDidEncounterErrors<T>) => any,
   ) {}
 
   requestDidStart(): GraphQLRequestListener<T> {
